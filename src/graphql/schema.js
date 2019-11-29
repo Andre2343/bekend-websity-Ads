@@ -1,6 +1,6 @@
 import { gql, makeExecutableSchema } from 'apollo-server';
 import merge from 'lodash/merge';
-import { typeDefs as Post, resolvers as postResolvers } from './post';
+import { typeDefs as Ad, resolvers as postResolvers } from './ad';
 import { typeDefs as User, resolvers as userResolvers } from './user';
 
 const Common = gql`
@@ -14,7 +14,7 @@ const Common = gql`
 `;
 
 const schema = makeExecutableSchema({
-  typeDefs: [Common, User, Post],
+  typeDefs: [Common, User, Ad],
   resolvers: merge(userResolvers, postResolvers),
 });
 

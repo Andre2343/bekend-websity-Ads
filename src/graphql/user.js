@@ -70,7 +70,7 @@ export const typeDefs = gql`
 `;
 
 export const resolvers = {
-  Post: {
+  Ad: {
     creator: ({ createdBy }) => AuthService.findUserById(createdBy),
   },
   Query: {
@@ -122,7 +122,6 @@ export const resolvers = {
       if (nModified > 0) return true;
       return false;
     },
-    //     changePassword
-    // forgotPassword
+    
   },
 };
