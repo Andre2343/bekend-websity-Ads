@@ -5,13 +5,8 @@ import { authCheck } from './utils';
 
 export const typeDefs = gql`
   extend type Query {
-    ads(
-      offset: Int,
-      limit: Int,
-      categoryId: ID
-      search: String
-    ): [Ad]!
-    categories: [Category]!;
+    ads(offset: Int, limit: Int, categoryId: ID, search: String): [Ad]!
+    categories: [Category]!
   }
 
   extend type Mutation {
@@ -67,7 +62,6 @@ export const resolvers = {
       const { limit, offset } = args;
       return PostsService.find({}, { limit, offset });
     },
-
   },
   Mutation: {
     addAd: (root, args, ctx) => {
@@ -83,5 +77,4 @@ export const resolvers = {
       return PostsService.update(args.postId, args.body);
     },
   },
-  
 };

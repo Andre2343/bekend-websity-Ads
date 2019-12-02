@@ -48,14 +48,6 @@ export const typeDefs = gql`
     token: String!
   }
 
-  extend type Post {
-    creator: User!
-  }
-
-  extend type Comment {
-    creator: User!
-  }
-
   type User {
     _id: ID!
     username: String!
@@ -122,6 +114,5 @@ export const resolvers = {
       if (nModified > 0) return true;
       return false;
     },
-    
   },
 };

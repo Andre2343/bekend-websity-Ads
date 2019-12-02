@@ -1,15 +1,10 @@
-const adFactory = () => ({
+// const adFactory = () => ({});
 
-});
+// const createAds = (n = 10) => {
+//   return [...new Array(n)].map(adFactory);
+// };
 
-const createAds = (n = 10) => {
-  return [...(new Array(n))].map(adFactory);
-}
-
-const ads = [{
-
-}];
-
+const ads = [];
 
 const mocks = {
   Query: {
@@ -21,6 +16,6 @@ const mocks = {
     //   return categoroes;
     // }
   },
-}
+};
 
 export default mocks;

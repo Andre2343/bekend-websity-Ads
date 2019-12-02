@@ -2,4 +2,9 @@ import merge from 'lodash/merge';
 import adMocks from './ad';
 // import userMocks from './user';
 
-export default merge({}, adMocks, /*userMocks*/);
+const mergedMocks = merge({}, adMocks /* userMocks */);
+
+export default {
+  ...(mergedMocks.Query ? { Query: () => mergedMocks.Query } : {}),
+  ...(mergedMocks.Mutation ? { Mutation: () => mergedMocks.Mutation } : {}),
+};
