@@ -1,5 +1,6 @@
 import { ApolloServer } from 'apollo-server';
 import schema from './schema';
+import mocks from './__mocks__';
 import logger from '../utils/logger';
 import UserModel from '../models/user';
 
@@ -12,7 +13,7 @@ const server = new ApolloServer({
   introspection: true,
   playground: true,
   schema,
-  mocks: true,
+  mocks,
   mockEntireSchema: false,
   context: async ({ req }) => {
     const token = getTokenFromReq(req);
